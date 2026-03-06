@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import "./globals.css";
-
+import Header from "@/components/organisms/Header";
+import Footer from "@/components/organisms/Footer";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -30,7 +31,10 @@ export default function RootLayout({
         className={`${raleway.variable} 
           antialiased`}
       >
-        {children}
+        <Header />
+        <main className="bg-gray-50 min-h-screen">{children}</main>
+
+        <Footer />
       </body>
     </html>
   );
