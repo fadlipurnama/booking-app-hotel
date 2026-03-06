@@ -1,2 +1,32 @@
 @import "tailwindcss";
 
+@layer base {
+  :root {
+    /* Variabel Dinamis (Bisa kamu ganti nanti untuk Dark Mode) */
+    --bg-primary: #ffffff; /* white */
+    --bg-secondary: #f3f4f6; /* gray-100 */
+
+    --text-solid: #1f2937; /* gray-800 */
+    --text-soft: #4a5565; /* gray-600 */ --text-subtle: #6a7282; /* gray-500 */
+    --text-muted: #99a1af; /* gray-400 */
+  }
+}
+
+@theme {
+  /* Memetakan variabel dinamis ke nama theme */
+  --color-primary-bg: var(--bg-primary);
+  --color-secondary-bg: var(--bg-secondary);
+
+  --color-solid-text: var(--text-solid);
+  --color-soft-text: var(--text-soft);
+  --color-subtle-text: var(--text-subtle);
+  --color-muted-text: var(--text-muted);
+
+  /* Variabel Statis (Warna brand blue kamu) */
+  --color-brand-primary: #2b7fff; /* blue-400 */
+  --color-brand-secondary: #155dfc; /*  blue-500 */
+
+  /* Tambahkan warna brand lain jika ada (seperti di contohmu) */
+  --color-brand-black: #201f1f;
+  --color-brand-gray: #101828;
+}
