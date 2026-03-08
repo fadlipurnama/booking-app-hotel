@@ -3,6 +3,8 @@ import { Raleway } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/organisms/Header";
 import Footer from "@/components/organisms/Footer";
+import { SessionProvider } from "next-auth/react";
+import { auth } from "@/auth";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -19,11 +21,13 @@ export const metadata: Metadata = {
   description: "Online Booking Hotel",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const session = await auth()
   return (
     // ${geistMono.variable}
     <html lang="en">
@@ -31,10 +35,12 @@ export default function RootLayout({
         className={`${raleway.variable} 
           antialiased`}
       >
-        <Header />
-        <main className="bg-gray-50 min-h-screen">{children}</main>
+        <SessionProvider session={session}>
+          <Header />
+          <main className="bg-gray-50 min-h-screen">{children}</main>
 
-        <Footer />
+          <Footer />
+        </SessionProvider>
       </body>
     </html>
   );
