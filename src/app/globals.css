@@ -7,7 +7,8 @@
     --bg-secondary: #f3f4f6; /* gray-100 */
 
     --text-solid: #1f2937; /* gray-800 */
-    --text-soft: #4a5565; /* gray-600 */ --text-subtle: #6a7282; /* gray-500 */
+    --text-soft: #4a5565; /* gray-600 */ 
+    --text-subtle: #6a7282; /* gray-500 */
     --text-muted: #99a1af; /* gray-400 */
   }
 }

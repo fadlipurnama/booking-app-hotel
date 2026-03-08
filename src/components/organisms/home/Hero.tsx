@@ -4,7 +4,7 @@ import Image from "next/image";
 function HeroSection() {
   return (
     <section className="relative h-screen text-white overflow-hidden">
-      <div className="aboslute inset-0 after:absolute after:inset-0 after:bg after:bg-black after:opacity-50">
+      <div className="absolute inset-0 after:absolute after:inset-0 after:bg after:bg-black after:opacity-50">
         <Image
           src={"/assets/hero.jpg"}
           alt="hero image"
@@ -16,7 +16,7 @@ function HeroSection() {
         <h2 className="text-7xl font-extrabold leading-tight mb-3 capitalize">
           Book your luxury room
         </h2>
-        <p className="text-xl text-subtle-text mb-8">
+        <p className="text-xl text-white font-light mb-8">
           Get Special offer just for you today
         </p>
         <div className="flex gap-5">
