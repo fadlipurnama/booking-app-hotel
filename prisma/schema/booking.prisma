@@ -1,0 +1,27 @@
+model Reservation {
+  id        String   @id @default(cuid())
+  startDate DateTime
+  endDate   DateTime
+  price     Int
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  roomId    String
+  room      Room     @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  payment Payment?
+}
+
+
+model Payment {
+    id      String  @id @default(cuid())
+    methode String?
+    amount  Int
+    status  String  @default("unpaid")
+
+    createdAt     DateTime    @default(now())
+    updatedAt     DateTime    @updatedAt
+    reservationId String      @unique
+    reservation   Reservation @relation(fields: [reservationId], references: [id], onDelete: Cascade)
+}

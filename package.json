@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.1",
-    "@prisma/client": "^7.4.2",
+    "@prisma/client": "^6.19.2",
+    "@prisma/extension-accelerate": "^3.0.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.577.0",
     "next": "16.1.6",
@@ -28,5 +29,8 @@
     "prisma": "^6.19.2",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "prisma": {
+    "schema": "prisma/schema"
   }
 }
