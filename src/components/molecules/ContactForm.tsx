@@ -1,30 +1,39 @@
-// src/components/molecules/ContactForm.tsx
+"use client";
 import { Button } from "../atoms/Button";
 import { InputField } from "../atoms/InputField";
 import { TextAreaField } from "../atoms/TextAreaField";
+import { useActionState } from "react";
+import { ContactMessage } from "@/lib/actions/contact";
+import { AlertMessage } from "../atoms/AlertMessage";
 
 function ContactForm() {
+  const [state, formAction, isPending] = useActionState(ContactMessage, null);
+
+  // console.log("state :", state?.error);
   return (
     <div className="bg-primary-bg p-8 rounded-sm shadow-sm">
-      <form action="">
+      {state?.message && <AlertMessage message={state.message} />}
+      <form action={formAction}>
         <div className="grid md:grid-cols-2 gap-7 mt-6">
           <InputField
             name="name"
             placeholder="Name*"
-            required
-            error="" // Nanti bisa diisi pesan error dari state
+            error={state?.error?.name} // Nanti bisa diisi pesan error dari state
           />
 
           <InputField
             type="email"
             name="email"
             placeholder="johndoe@example.com*"
-            required
-            error=""
+            error={state?.error?.email}
           />
 
           <div className="md:col-span-2">
-            <InputField name="subject" placeholder="Subject*" required />
+            <InputField
+              name="subject"
+              placeholder="Subject*"
+              error={state?.error?.subject}
+            />
           </div>
 
           <div className="md:col-span-2">
@@ -32,8 +41,7 @@ function ContactForm() {
               name="message"
               placeholder="Your Message*"
               rows={5}
-              required
-              error=""
+              error={state?.error?.message}
             />
           </div>
         </div>
@@ -42,9 +50,10 @@ function ContactForm() {
           <Button
             variant="primary"
             size="xl"
-            className="font-semibold w-full md:w-auto"
+            className="font-semibold w-full"
+            isPending={isPending}
           >
-            Send Message
+            {isPending ? "Loading..." : " Send Message"}
           </Button>
         </div>
       </form>
