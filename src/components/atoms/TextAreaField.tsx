@@ -1,5 +1,5 @@
 interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
-  error?: string;
+  error?: string | string[] | null;
 }
 
 export const TextAreaField = ({

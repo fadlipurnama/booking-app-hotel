@@ -1,5 +1,5 @@
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  error?: string;
+  error?: string | string[] | null;
 }
 
 export const InputField = ({ error, className, ...props }: InputProps) => (
