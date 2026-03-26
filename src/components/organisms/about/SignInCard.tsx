@@ -18,6 +18,7 @@ const handleGoogleSignIn = async () => {
             <Button
               size="lg"
               variant="primary"
+              type="submit"
               className="w-full items-center "
             >
               <Google className="size-7" />

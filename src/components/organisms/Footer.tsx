@@ -22,9 +22,9 @@ function Footer() {
               tempore! Labore consectetur maiores dolor voluptatibus.
             </p>
           </div>
-          <div className="col-span-12 lg:col-span-3 justify-between  flex w-full  lg:justify-normal gap-6 border">
+          <div className="col-span-12 lg:col-span-3 justify-between  flex w-full  lg:justify-normal gap-6 ">
             <div className="flex flex-col gap-4">
-              <h4 className="text-xl font-semibold text-white">Links</h4>
+              <h2 className="text-xl font-semibold text-white">Links</h2>
               <nav className="flex flex-col gap-y-5 text-muted-text">
                 {menuLinksFooter.map((item, i) => (
                   <Link key={i} href={item.href}>
@@ -34,7 +34,7 @@ function Footer() {
               </nav>
             </div>
             <div className="flex flex-col gap-4">
-              <h4 className="text-xl font-semibold text-white">Legals</h4>
+              <h2 className="text-xl font-semibold text-white">Legals</h2>
               <nav className="flex flex-col gap-y-5 text-muted-text">
                 {policyLinksFooter.map((item, i) => (
                   <Link key={i} href={item.href}>
@@ -46,9 +46,9 @@ function Footer() {
           </div>
 
           <div className="col-span-12 lg:col-span-4 flex flex-col">
-            <h4 className="mb-8 text-xl font-semibold text-white">
+            <h2 className="mb-8 text-xl font-semibold text-white">
               Newsletter
-            </h4>
+            </h2>
             <p className="text-muted-text">
               Lorem ipsum dolor sit amet consectetur adipisicing.
             </p>
@@ -56,8 +56,14 @@ function Footer() {
               <input
                 className="w-full mb-5 p-3 rounded-sm bg-primary-bg"
                 placeholder="johndoe@gmail.com"
+              suppressHydrationWarning
               />
-              <Button size="lg" variant="primary" className="w-full">
+              <Button
+                size="lg"
+                variant="primary"
+                className="w-full"
+                suppressHydrationWarning
+              >
                 Subscribe
               </Button>
             </form>

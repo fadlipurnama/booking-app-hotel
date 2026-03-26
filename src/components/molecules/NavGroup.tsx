@@ -75,6 +75,7 @@ function NavGroup() {
                 size="md"
                 variant="warn"
                 className="lg:hidden w-fit uppercase font-semibold"
+                suppressHydrationWarning
               >
                 Sign Out
               </Button>

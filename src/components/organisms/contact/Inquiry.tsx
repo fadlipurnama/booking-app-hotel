@@ -1,4 +1,4 @@
-import ContactForm from "@/components/molecules/ContactForm";
+import ContactForm from "@/components/organisms/contact/ContactForm";
 import { ContactItem } from "@/components/molecules/ContactItem";
 import { CONTACT_INFO } from "@/constants/contact";
 
