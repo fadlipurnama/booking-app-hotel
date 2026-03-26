@@ -1,7 +1,7 @@
 {
   "name": "booking-app",
   "version": "0.1.0",
-   "type": "module",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,6 +14,9 @@
     "@prisma/adapter-pg": "^7.4.2",
     "@prisma/client": "^7.4.2",
     "@prisma/extension-accelerate": "^3.0.1",
+    "@upstash/ratelimit": "^2.0.8",
+    "@upstash/redis": "^1.37.0",
+    "@vercel/blob": "^2.3.1",
     "clsx": "^2.1.1",
     "dotenv": "^17.3.1",
     "lucide-react": "^0.577.0",
@@ -21,7 +24,10 @@
     "next-auth": "^5.0.0-beta.30",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "zod": "^4.3.6"
+    "react-easy-crop": "^5.5.6",
+    "react-spinners": "^0.17.0",
+    "zod": "^4.3.6",
+    "zustand": "^5.0.11"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
