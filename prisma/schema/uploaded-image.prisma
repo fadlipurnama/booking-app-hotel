@@ -1,0 +1,13 @@
+model UploadedImage {
+  id         String  @id @default(cuid())
+  url        String  @unique
+  status     String  @default("PENDING") // PENDING atau ATTACHED
+  entityType String // Contoh: "ROOM", "PRODUCT", "POST"
+  entityId   String? // Akan diisi ID Room/Product setelah form di-save
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  // userId    String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+}

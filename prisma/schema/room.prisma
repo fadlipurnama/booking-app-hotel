@@ -6,19 +6,19 @@ model Room {
   price         Int
   capacity      Int             @default(1)
   roomAmenities RoomAmenities[]
-  reservation  Reservation[]   // Relasi ke file booking.prisma
-  
-  createdAt     DateTime        @default(now())
-  updatedAt     DateTime        @updatedAt
-}
+  reservation   Reservation[] // Relasi ke file booking.prisma
 
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
 
 model Amenities {
   id            String          @id @default(cuid())
   name          String
   roomAmenities RoomAmenities[]
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
 }
-
 
 model RoomAmenities {
   id          String    @id @default(cuid())
