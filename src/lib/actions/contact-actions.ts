@@ -3,7 +3,10 @@
 import { ContactSchema } from "@/schemas/contact";
 import { prisma } from "@/lib/prisma";
 
-export const ContactMessage = async (prevData: unknown, formData: FormData) => {
+export const contactMessage = async (
+  _prevData: unknown,
+  formData: FormData,
+) => {
   const validatedFields = ContactSchema.safeParse(
     Object.fromEntries(formData.entries()),
   );
@@ -24,6 +27,8 @@ export const ContactMessage = async (prevData: unknown, formData: FormData) => {
     });
     return { message: "Thanks for contact us." };
   } catch (error) {
-    console.log(error);
+    console.error("Actions Error [contactMessage]:", error);
+
+    throw new Error("Failed to contact message");
   }
 };
